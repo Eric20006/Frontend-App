@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@import './scss/export';
+
+/* Start */
+
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.display-center-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-center-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.max-z-index {
+    z-index: 9999;
+}
+
+.middle-z-index {
+    z-index: 500;
+}
+
+.min-z-index {
+    z-index: 1;
+}
