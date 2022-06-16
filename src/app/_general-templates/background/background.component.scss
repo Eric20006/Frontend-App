@@ -1,0 +1,47 @@
+@import '../../../scss/export';
+
+/* Start: */
+
+.background {
+    height: 100%;
+    width: 100%;
+    position: absolute !important;
+    overflow: hidden;
+    .background-objects {
+        position: absolute;
+        &:nth-child(1) {
+            left: 0;
+            bottom: 0;
+            transform: rotate(45deg) translate($scale-height * 50 / 3.141, 0); //PI --> Verhätnis
+            height: $scale-height * 50;
+            width: $scale-width;
+        }
+        &:nth-child(2) {
+            right: $scale-height * 3;
+            top: $scale-height * 1.5;
+            height: $scale-height *5;
+            width: $scale-height *5;
+            transform: rotate(45deg);
+        }
+        &:nth-child(3) {
+            left: $scale-height * 12;
+            top: $scale-height * 1.5;
+            height: $scale-height * 8;
+            width: $scale-width * 2;
+            transform: rotate(350deg);
+        }
+        &:nth-child(4) {
+            right: $scale-height * 1.8;
+            bottom: $scale-height * 2.2;
+            height: $scale-height * 15;
+            width: $scale-width * 0.5;
+            transform: rotate(345deg);
+        }
+        &:nth-child(5) {
+            left: 50%;
+            top: $scale-height * 10;
+            height: $scale-height * 16;
+            width: $scale-width * 2;
+        }
+    }
+}

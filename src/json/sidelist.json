@@ -1,0 +1,51 @@
+[{
+    "name": "Startseite",
+    "matIcon": "home",
+    "id": 0,
+    "path": ""
+}, {
+    "name": "Notentabelle",
+    "matIcon": "table_chart",
+    "id": 1,
+    "path": "notentabelle"
+}, {
+    "name": "Hausaufgabenansicht",
+    "matIcon": "check_box",
+    "id": 2,
+    "path": "hausaufgabenansicht"
+}, {
+    "name": "Terminliste",
+    "matIcon": "local_mall",
+    "id": 3,
+    "path": "terminliste"
+}, {
+    "name": "Prüfungen",
+    "matIcon": "schedule",
+    "id": 4,
+    "path": "pruefungen"
+}, {
+    "name": "gemischte Liste",
+    "matIcon": "list",
+    "id": 5,
+    "path": "gemischte_liste"
+}, {
+    "name": "Anmeldung",
+    "matIcon": "lock_open",
+    "id": 6,
+    "path": "anmeldung"
+}, {
+    "name": "Kalender",
+    "matIcon": "calendar_today",
+    "id": 7,
+    "path": "kalender"
+}, {
+    "name": "AGBs",
+    "matIcon": "local_post_office",
+    "id": 8,
+    "path": "agb"
+}, {
+    "name": "Über uns",
+    "matIcon": "person_pin",
+    "id": 9,
+    "path": "ueber_uns"
+}]

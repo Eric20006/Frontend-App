@@ -1,0 +1,16 @@
+<div class="main-theme-color sidelist sidelist-general" [ngClass]="{'sidelist-mobile': triggerMobileView}">
+    <h1>{{dataTitle.title}}</h1>
+    <div class="sidelist-container sidelist-container-general" *ngFor="let item of dataForNGHelper" (click)="changePath(item.path)">
+        <mat-icon class="sidelist-icon sidelist-icon-general">{{item.matIcon}}</mat-icon>
+        <p> {{item.name}}
+            <p>
+    </div>
+</div>
+
+<div class="mobile-cross" (click)="changeTriggerMobileView();">
+    <div class="mobile-cross-container is-active-hover">
+        <span *ngFor=" let i of [0,1, 3] " class="second-theme-color mobile-cross-content " [ngClass]="{ 'is-active': triggerMobileView} "> </span>
+    </div>
+</div>
+
+<div [ngClass]="{ 'mobile-restcontainer': triggerMobileView} " (click)="changeTriggerMobileView(); "></div>

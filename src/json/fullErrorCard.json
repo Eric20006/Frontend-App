@@ -1,0 +1,19 @@
+{
+    "standard": {
+        "h1": "Oh Nein!",
+        "p1": "Hier scheint ein Fehler aufgekommen zu sein.",
+        "p3": "Gehe wieder zu",
+        "a": "Startseite"
+    },
+    "errorMessages": {
+        "error1": "Programmier-Fehler -- bitte melden",
+        "error2": "Nicht vorhandene Route.",
+        "error3": "Du musst dich neu anmelden.",
+        "error4": "Test-Fehler -- bitte melden"
+    },
+    "locationPathnames": {
+        "path2": "/404",
+        "path3": "/logout",
+        "path4": "/test"
+    }
+}
