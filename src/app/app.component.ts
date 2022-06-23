@@ -1,6 +1,8 @@
+import { DatabankService } from 'src/app/_services/databank/databank.service';
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { RootTestService } from './_services/root-test/root-test.service';
+
 
 @Component({
   selector: 'school-root',
@@ -9,9 +11,10 @@ import { RootTestService } from './_services/root-test/root-test.service';
 })
 export class AppComponent implements OnInit{
 
-  constructor(private rootTest:RootTestService) {}
+  constructor(private rootTest:RootTestService, private databank: DatabankService) {}
 
   ngOnInit(): void {
     this.rootTest.controlWithHimself();
+    this.databank.onloadIconString();
   }
 }

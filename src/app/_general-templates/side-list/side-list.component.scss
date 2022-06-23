@@ -7,6 +7,7 @@
     .sidelist-container-general {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         margin-top: $scale-height * 0.5 !important;
         transition: all 0.5s ease-in-out;
         height: min-content;
@@ -24,13 +25,12 @@
 }
 
 // Tablets and Computers
-@media screen and (min-width:700px) {
+@media screen and (min-width:701px) {
     .sidelist {
         left: 0;
         top: 0;
         height: 100%;
-        width: $scale-width * 4;
-        min-width: min-content;
+        width: $scale-width * 7; //has to be the same like the left by outer-wrapper (app-component)
         padding: $scale-width * 0.4;
         position: absolute;
         box-sizing: border-box;

@@ -1,0 +1,36 @@
+<div class="add-task display-center-row" (click)="showAddCard = true">
+    <mat-icon>{{_data.icons.addCardIcon}}</mat-icon>
+</div>
+
+<div *ngIf="showAddCard" class="container">
+    <div class="min-z-index anti-show" (click)="showAddCard = false"></div>
+    <div class="max-z-index add-card">
+        <form class="display-center-column" #addTask="ngForm" (submit)="submit(addTask.value);">
+            <h3>{{_data.text.h3}}</h3>
+            <p>{{_data.text.selectName}}</p>
+            <select type="text" name="subject" ngModel>
+              <option *ngFor="let item of databank.icons" value="{{item}}">{{item}}</option>
+            </select>
+            <p *ngIf="addTask.value.subject == '' ">{{_data.text.selectMissing}}</p>
+
+            <input maxlength="50" type="text" placeholder="{{_data.placeholders.task}}" name="task" ngModel>
+            <p *ngIf="addTask.value.task == '' ">{{_data.text.taskMissing}}</p>
+
+            <input type="date" name="date" ngModel>
+            <p *ngIf="addTask.value.date == '' ">{{_data.text.dateMissing}}</p>
+            <p *ngIf="addTask.value.date <= today && addTask.value.date != ''">{{_data.text.dateWrong}}</p>
+
+            <br>
+            <p>{{_data.text.getting}}</p>
+            <label class="toggle" for="getting">
+                <input class="toggle-input" id="getting"  type="checkbox" name="getting" ngModel>
+                <div class="toggle-fill"></div>
+            </label>
+
+            <button type="submit">
+              <mat-icon>{{_data.icons.submit}}</mat-icon>
+            </button>
+
+        </form>
+    </div>
+</div>

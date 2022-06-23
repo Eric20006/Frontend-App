@@ -19,6 +19,7 @@ export class ErrorComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     if (location.pathname == this._data.locationPathnames.path2) return this.errorMsg = this._data.errorMessages.error2;
     if (location.pathname == this._data.locationPathnames.path3) return this.errorMsg = this._data.errorMessages.error3;
     if (location.pathname == this._data.locationPathnames.path4) return this.errorMsg = this._data.errorMessages.error4;

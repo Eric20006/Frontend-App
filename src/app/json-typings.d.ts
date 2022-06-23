@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// You can use every type with it
+// You can use with it every type
 
 declare module '*.json' {
   const value: any[];

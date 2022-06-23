@@ -1,4 +1,4 @@
-<div class="main-theme-color sidelist sidelist-general" [ngClass]="{'sidelist-mobile': triggerMobileView}">
+<div class="main-theme-color sidelist sidelist-general " [ngClass]="{'sidelist-mobile': triggerMobileView}">
     <h1>{{dataTitle.title}}</h1>
     <div class="sidelist-container sidelist-container-general" *ngFor="let item of dataForNGHelper" (click)="changePath(item.path)">
         <mat-icon class="sidelist-icon sidelist-icon-general">{{item.matIcon}}</mat-icon>

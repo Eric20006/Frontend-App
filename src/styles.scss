@@ -47,6 +47,19 @@ h1 {
     color: $special-color;
 }
 
+h2 {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: $scale-height * 0.8 !important;
+    color: $special-color;
+}
+
+h3 {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: $scale-height * 0.8 !important;
+}
+
 p {
     margin: 0 !important;
     padding: 0 !important;
@@ -62,6 +75,31 @@ a {
     }
 }
 
+input,
+select {
+    outline: none !important;
+    border: none !important;
+    width: 50% !important;
+    margin: 8px !important;
+    border-radius: 10px !important;
+    height: $scale-height * 1.2 !important;
+    text-align: center !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: $scale-height * 0.6 !important;
+}
+
+button {
+    outline: none !important;
+    border: none !important;
+    margin: 8px !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    width: $scale-width * 2 !important;
+    height: $scale-width * 1 !important;
+    cursor: pointer;
+}
+
 //Main Theme Choosing
 @media (prefers-color-scheme: light) {
     .main-theme-color {
@@ -70,8 +108,29 @@ a {
     .second-theme-color {
         background-color: $secondLight;
     }
+    .second-theme-color-transparency {
+        background-color: transparentize($color: $secondLight, $amount: 0.3);
+    }
     .theme-font-color {
         color: $fontLight;
+    }
+    input,
+    select {
+        color: $fontLight;
+        background-color: $primeLight;
+        &::placeholder {
+            color: $fontLight;
+        }
+    }
+    button {
+        color: $fontDark;
+        background-color: $primeDark;
+    }
+    .toggle-fill {
+        background: $thirdLight;
+        &::after {
+            background-color: $fontLight;
+        }
     }
 }
 
@@ -82,7 +141,89 @@ a {
     .second-theme-color {
         background-color: $secondDark;
     }
+    .second-theme-color-transparency {
+        background-color: transparentize($color: $secondLight, $amount: 0.9);
+    }
     .theme-font-color {
         color: $fontDark;
+    }
+    input,
+    select {
+        color: $fontDark;
+        background-color: $primeDark;
+        &::placeholder {
+            color: $fontDark;
+        }
+    }
+    button {
+        color: $fontLight;
+        background-color: $primeLight;
+    }
+    .toggle-fill {
+        background: $thirdDark;
+        &::after {
+            background-color: $fontDark;
+        }
+    }
+}
+
+//Important Main Body Content
+.wrapper {
+    position: absolute;
+    height: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+//Tablets Computer
+@media screen and (min-width: 700px) {
+    .wrapper {
+        left: $scale-width * 7; // has to be the same like the sidelist width
+        top: 0;
+        width: 100vw - ($scale-width * 7);
+    }
+}
+
+//Mobile
+@media screen and (max-width: 700px) {
+    .wrapper {
+        left: 0;
+        top: 50px;
+        width: 100%;
+    }
+}
+
+//Slider
+.toggle {
+    display: flex;
+    cursor: pointer;
+    border-radius: 10px;
+    width: $scale-height * 2.4;
+    margin: 8px;
+    .toggle-input {
+        display: none;
+        &:checked~.toggle-fill {
+            background: green;
+            &::after {
+                transform: translateX($scale-height * 1.2);
+            }
+        }
+    }
+    .toggle-fill {
+        position: relative;
+        width: $scale-height * 2.4;
+        height: $scale-height * 1.2;
+        border-radius: 10px;
+        transition: background 0.2s;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: $scale-height * 1.2;
+            width: $scale-height * 1.2;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
     }
 }

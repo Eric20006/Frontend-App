@@ -1,0 +1,62 @@
+@import '../../../scss/export';
+
+/* Start: */
+
+.container {
+    display: flex;
+    width: 100%;
+    height: $scale-height * 1.8;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0;
+    border-radius: 10px;
+    padding: 2px;
+    box-sizing: border-box;
+    .icon-container {
+        border-radius: 100%;
+        width: $scale-height * 1.6;
+        height: $scale-height * 1.6;
+    }
+    .title-container {
+        width: 70%;
+        height: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    .date-container {
+        width: 10% !important;
+    }
+    .getting-container {
+        display: flex;
+        align-items: center;
+        color: $special-color;
+        width: 5%;
+    }
+    .crossing-container {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        mat-icon {
+            &:nth-child(2) {
+                display: none;
+            }
+        }
+        &:hover {
+            color: $special-color;
+            mat-icon {
+                &:nth-child(1) {
+                    display: none;
+                }
+                &:nth-child(2) {
+                    display: block;
+                }
+            }
+        }
+    }
+}

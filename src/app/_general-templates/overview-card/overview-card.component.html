@@ -1,0 +1,24 @@
+<div>
+    <p *ngIf="todayDate == task.date">{{_data.today}}</p>
+    <p *ngIf="todayDate > task.date">{{_data.yesterday}}</p>
+    <p *ngIf="todayDate < task.date &&  tomorrowDate == task.date">{{_data.tomorrow}}</p>
+</div>
+
+<div class="container second-theme-color-transparency">
+    <div class="icon-container display-center-row main-theme-color">
+        <p>{{task.icon}}</p>
+    </div>
+    <div class="title-container">
+        <p>{{task.title}}</p>
+    </div>
+    <div class="date-container">
+        <p>{{task.date}}</p>
+    </div>
+    <div class="getting-container">
+        <mat-icon *ngIf="task.getting">{{_data.gettingIcon}}</mat-icon>
+    </div>
+    <div class="crossing-container" (click)="choosingDelete();">
+        <mat-icon>{{_data.crossingIconShow}}</mat-icon>
+        <mat-icon>{{_data.crossingIconCheck}}</mat-icon>
+    </div>
+</div>

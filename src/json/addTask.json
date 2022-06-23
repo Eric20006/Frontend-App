@@ -1,0 +1,19 @@
+{
+    "icons": {
+        "addCardIcon": "library_add",
+        "submit": "send"
+    },
+    "text": {
+        "h3": "Neue Aufgabe: ",
+        "selectName": "Kurs: ",
+        "getting": "Wird die Aufgabe abgegeben?",
+
+        "selectMissing": "Kurs fehlt.",
+        "taskMissing": "Aufgabe fehlt.",
+        "dateMissing": "Datum fehlt.",
+        "dateWrong": "Wähle ein zukünftiges Datum aus."
+    },
+    "placeholders": {
+        "task": "Aufgabe"
+    }
+}
