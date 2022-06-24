@@ -42,7 +42,8 @@ export class AddTaskComponent {
       title: value.task,
       icon: value.subject,
       getting: __getting,
-      date: newDay
+      date: newDay,
+      __date: new Date(value.date)
     };
 
     console.log(this.task);

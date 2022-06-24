@@ -3,7 +3,6 @@
     "crossingIconShow": "crop_square",
     "crossingIconCheck": "check_circle_outline",
 
-    "today": "Heute ist Abgabefrist:",
     "yesterday": "Abgelaufen (Bitte Löschen):",
     "tomorrow": "Morgen ist Abgabefrist:"
 }

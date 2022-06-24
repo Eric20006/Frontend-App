@@ -14,22 +14,43 @@ export class DatabankService {
     this.tasks = [ {      //TODO:
       id: 234,
       title: 'Hallo',
+      __date: new Date(),
       date: this.gettingDate(),
       getting: false,
       icon: 'as'
     },{
       id: 123,
       title: 'Test',
+      __date: new Date(2022, 5, 2),
       date: '2.6.2022',
       getting: true,
       icon: 'd'
-    },{id: 234,
-    title: 'Hallo',
-    date: this.gettingDate(),
-    getting: false,
-    icon: 'as'
-  },];
+    },{
+      id: 234,
+      title: 'Hallo',
+      __date: new Date(),
+      date: this.gettingDate(),
+      getting: false,
+      icon: 'as'
+    },{
+      id: 234,
+      title: 'Hallo',
+      __date: new Date(2022,6,26),
+      date: '26.7.2022',
+      getting: false,
+      icon: 'as'
+    } ,{
+      id: 234,
+      title: 'Hallo',
+      __date: new Date(2022,6,21),
+      date: '21.7.2022',
+      getting: false,
+      icon: 'as'
+    },];
+    console.log(this.tasks);
+
     this.sortingTask();
+    console.log(this.tasks);
   }
 
   public deleteTask(task: Tasks):void {   //TODO:
@@ -49,9 +70,14 @@ export class DatabankService {
   }
 
   private sortingTask():void {
-    this.tasks.sort(function(a, b) {
-      return parseFloat(a.date) - parseFloat(b.date);
+    this.tasks.sort(function(a,b){
+      const firstDate = new Date(a.__date),
+          SecondDate = new Date(b.__date);
+    if (firstDate < SecondDate) return -1;
+    if (firstDate > SecondDate) return 1;
+    return 0;
     });
+
   }
 
   public onloadIconString():void { //TODO:

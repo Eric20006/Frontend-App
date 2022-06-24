@@ -1,6 +1,5 @@
 <div>
-    <p *ngIf="todayDate == task.date">{{_data.today}}</p>
-    <p *ngIf="todayDate > task.date">{{_data.yesterday}}</p>
+    <p *ngIf="date > task.__date">{{_data.yesterday}}</p>
     <p *ngIf="todayDate < task.date &&  tomorrowDate == task.date">{{_data.tomorrow}}</p>
 </div>
 
