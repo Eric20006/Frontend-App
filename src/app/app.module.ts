@@ -9,10 +9,11 @@ import { BackgroundComponent } from './_general-templates/background/background.
 import { SideListComponent } from './_general-templates/side-list/side-list.component';
 import { ErrorComponent } from './_routes/error/error.component';
 import { OverviewComponent } from './_routes/overview/overview.component';
-import { HomeworkComponent } from './_routes/homework/homework.component';
 import { OverviewCardComponent } from './_general-templates/overview-card/overview-card.component';
 import { AddTaskComponent } from './_general-templates/add-task/add-task.component';
 import { FormsModule } from '@angular/forms';
+import { ListsComponent } from './_routes/lists/lists.component';
+import { SortSliderComponent } from './_general-templates/sort-slider/sort-slider.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +22,10 @@ import { FormsModule } from '@angular/forms';
     SideListComponent,
     ErrorComponent,
     OverviewComponent,
-    HomeworkComponent,
     OverviewCardComponent,
     AddTaskComponent,
+    ListsComponent,
+    SortSliderComponent,
   ],
   imports: [
     BrowserModule,

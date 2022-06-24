@@ -7,45 +7,29 @@ import { Tasks } from 'src/app/_interfaces/tasks';
 export class DatabankService {
 
   public tasks!:Tasks[];
+  public schedules!: Tasks[];
   public icons!: string[];
+  public changeScheduleSorting!:boolean;
   test!:string;             //TODO:
+
+
+  //Tasks
 
   public getTasks():void {
     this.tasks = [ {      //TODO:
       id: 234,
-      title: 'Hallo',
+      title: 'Raumanalyse',
       __date: new Date(),
       date: this.gettingDate(),
       getting: false,
-      icon: 'as'
+      icon: 'Geo1'
     },{
       id: 123,
-      title: 'Test',
+      title: 'BS 10/2',
       __date: new Date(2022, 5, 2),
       date: '2.6.2022',
       getting: true,
-      icon: 'd'
-    },{
-      id: 234,
-      title: 'Hallo',
-      __date: new Date(),
-      date: this.gettingDate(),
-      getting: false,
-      icon: 'as'
-    },{
-      id: 234,
-      title: 'Hallo',
-      __date: new Date(2022,6,26),
-      date: '26.7.2022',
-      getting: false,
-      icon: 'as'
-    } ,{
-      id: 234,
-      title: 'Hallo',
-      __date: new Date(2022,6,21),
-      date: '21.7.2022',
-      getting: false,
-      icon: 'as'
+      icon: 'Ma2'
     },];
     console.log(this.tasks);
 
@@ -65,10 +49,6 @@ export class DatabankService {
     this.sortingTask();
   }
 
-  private gettingDate():string { //TODO:
-    return this.test = new Date().getDate() + '.' + (new Date().getMonth() + 1) + '.' + new Date().getFullYear();
-  }
-
   private sortingTask():void {
     this.tasks.sort(function(a,b){
       const firstDate = new Date(a.__date),
@@ -77,8 +57,64 @@ export class DatabankService {
     if (firstDate > SecondDate) return 1;
     return 0;
     });
-
   }
+
+  //schedules
+
+  public getSchedules():void {
+    this.schedules = [ {      //TODO:
+      id: 234,
+      title: 'Hochschule',
+      __date: new Date(),
+      date: this.gettingDate(),
+      getting: false,
+      icon: ''
+    },{
+      id: 123,
+      title: 'Schülervertretung',
+      __date: new Date(2022, 5, 2),
+      date: '2.6.2022',
+      getting: false,
+      icon: 'SV'
+    }];
+
+    this.changeScheduleSorting = true;
+    this.sortingSchedule();
+  }
+
+  public deleteSchedule (schedule: Tasks):void {
+    for (let i = 0; i < this.schedules.length; i++) {
+      if (this.schedules[i] == schedule ) this.schedules.splice(i, 1);
+    }
+  }
+
+  public sortingSchedule():void {
+    this.schedules.sort(function(a,b){
+      const firstDate = new Date(a.__date),
+          SecondDate = new Date(b.__date);
+    if (firstDate < SecondDate) return -1;
+    if (firstDate > SecondDate) return 1;
+    return 0;
+    });
+  }
+
+  public sortingSchedule2():void {
+    this.schedules.sort((a, b) => a.icon.localeCompare(b.icon));
+  }
+
+  public addSchedule(schedule:Tasks):void {
+    this.schedules.push(schedule);
+    if (this.changeScheduleSorting) this.sortingSchedule();
+    else this.sortingSchedule2();
+  }
+
+
+  //General
+  private gettingDate():string { //TODO:
+    return this.test = new Date().getDate() + '.' + (new Date().getMonth() + 1) + '.' + new Date().getFullYear();
+  }
+
+
 
   public onloadIconString():void { //TODO:
     this.icons = [

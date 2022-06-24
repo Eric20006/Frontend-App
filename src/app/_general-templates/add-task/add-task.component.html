@@ -8,10 +8,13 @@
         <form class="display-center-column" #addTask="ngForm" (submit)="submit(addTask.value);">
             <h3>{{_data.text.h3}}</h3>
             <p>{{_data.text.selectName}}</p>
-            <select type="text" name="subject" ngModel>
+            <select *ngIf="choosingAddString != 'schedule'" type="text" name="subject" ngModel>
               <option *ngFor="let item of databank.icons" value="{{item}}">{{item}}</option>
             </select>
-            <p *ngIf="addTask.value.subject == '' ">{{_data.text.selectMissing}}</p>
+            <!-- By schedule you can use every Icon you want (BUT everybody can see every schedule…)-->
+            <input *ngIf="choosingAddString == 'schedule'" type="text" name="subject" ngModel>
+
+            <p *ngIf="addTask.value.subject == '' && choosingAddString != 'schedule'">{{_data.text.selectMissing}}</p>
 
             <input maxlength="50" type="text" placeholder="{{_data.placeholders.task}}" name="task" ngModel>
             <p *ngIf="addTask.value.task == '' ">{{_data.text.taskMissing}}</p>

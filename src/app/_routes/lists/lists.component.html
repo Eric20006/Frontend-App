@@ -1,9 +1,10 @@
 <div class="wrapper overflow">
     <h2>{{titleConfig.titleConfig()}}</h2>
-    <div *ngFor="let item of databank.tasks">
+    <div *ngFor="let item of item">
         <school-overview-card [choosingDeleteString]="id" [task]="item"></school-overview-card>
     </div>
 
     <school-add-task [choosingAddString]="id"></school-add-task>
 
+    <school-sort-slider *ngIf="id == 'schedule'"></school-sort-slider>
 </div>

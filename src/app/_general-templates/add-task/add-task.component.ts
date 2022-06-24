@@ -26,7 +26,8 @@ export class AddTaskComponent {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public submit(value:any):void {
-    if (value.subject == '' || value.task == '' || value.date == '') return;
+    if (value.task == '' || value.date == '') return;
+    if (value.subject == '' && this.choosingAddString != 'schedule') return;
     if (value.date <= this.today ) return;
 
     this.showAddCard = false;
@@ -49,6 +50,7 @@ export class AddTaskComponent {
     console.log(this.task);
 
     if (this.choosingAddString == 'homework') return this.databank.addTask(this.task);
+    if (this.choosingAddString == 'schedule') return this.databank.addSchedule(this.task);
   }
 
 }

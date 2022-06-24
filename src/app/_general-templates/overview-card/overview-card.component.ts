@@ -28,5 +28,7 @@ export class OverviewCardComponent {
 
   public choosingDelete():void {
     if (this.choosingDeleteString == 'homework') return this.databank.deleteTask(this.task);
+    if (this.choosingDeleteString == 'schedule') return this.databank.deleteSchedule(this.task);
+
   }
 }
