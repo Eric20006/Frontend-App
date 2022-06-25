@@ -1,3 +1,4 @@
+import { IdsService } from './../../_services/ids/ids.service';
 import { Component, Input } from '@angular/core';
 import { Tasks } from 'src/app/_interfaces/tasks';
 import { DatabankService } from 'src/app/_services/databank/databank.service';
@@ -13,12 +14,10 @@ export class AddTaskComponent {
   public showAddCard: boolean;
   public today: string;
   private task!: Tasks;
-
-
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public _data: any;
 
-  constructor(public databank:DatabankService) {
+  constructor(public databank:DatabankService, public ids:IdsService) {
     this.showAddCard = false;
     this.today = new Date().toISOString().split('T')[0];
     this._data = data;
@@ -27,7 +26,7 @@ export class AddTaskComponent {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public submit(value:any):void {
     if (value.task == '' || value.date == '') return;
-    if (value.subject == '' && this.choosingAddString != 'schedule') return;
+    if (value.subject == '' && this.choosingAddString != this.ids.specificIDs[1]) return;
     if (value.date <= this.today ) return;
 
     this.showAddCard = false;
@@ -49,8 +48,9 @@ export class AddTaskComponent {
 
     console.log(this.task);
 
-    if (this.choosingAddString == 'homework') return this.databank.addTask(this.task);
-    if (this.choosingAddString == 'schedule') return this.databank.addSchedule(this.task);
+    if (this.choosingAddString == this.ids.specificIDs[0]) return this.databank.addTask(this.task);
+    if (this.choosingAddString == this.ids.specificIDs[1]) return this.databank.addSchedule(this.task);
+    if (this.choosingAddString == this.ids.specificIDs[2]) return this.databank.addExamen(this.task);
   }
 
 }

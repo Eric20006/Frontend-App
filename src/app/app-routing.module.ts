@@ -7,10 +7,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {path: '', component: OverviewComponent},
-  {path: 'notentabelle', component: ErrorComponent},
+  {path: 'notentabelle', component: ErrorComponent}, //TODO:
   {path: 'hausaufgaben', component: ListsComponent},
   {path: 'terminliste', component: ListsComponent},
-  {path: 'pruefungen', component: ErrorComponent},
+  {path: 'pruefungen', component: ListsComponent},
   {path: 'gemischte_liste', component: ErrorComponent},
   {path: 'anmeldung', component: ErrorComponent},
   {path: 'kalender', component: ErrorComponent},

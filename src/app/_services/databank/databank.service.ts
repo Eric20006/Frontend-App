@@ -8,6 +8,7 @@ export class DatabankService {
 
   public tasks!:Tasks[];
   public schedules!: Tasks[];
+  public examens!: Tasks[];
   public icons!: string[];
   public changeScheduleSorting!:boolean;
   test!:string;             //TODO:
@@ -106,6 +107,42 @@ export class DatabankService {
     this.schedules.push(schedule);
     if (this.changeScheduleSorting) this.sortingSchedule();
     else this.sortingSchedule2();
+  }
+
+  //Examens
+
+  public getExamens():void {
+    this.examens = [ {      //TODO:
+      id: 234,
+      title: 'Klausur',
+      __date: new Date(),
+      date: this.gettingDate(),
+      getting: false,
+      icon: 'Deu1'
+    }];
+
+    this.sortingExamen();
+  }
+
+  public deleteExamen (examen: Tasks):void {
+    for (let i = 0; i < this.examens.length; i++) {
+      if (this.examens[i] == examen ) this.examens.splice(i, 1);
+    }
+  }
+
+  public addExamen(examens:Tasks):void {
+    this.examens.push(examens);
+    this.sortingExamen();
+  }
+
+  public sortingExamen():void {
+    this.examens.sort(function(a,b){
+      const firstDate = new Date(a.__date),
+          SecondDate = new Date(b.__date);
+    if (firstDate < SecondDate) return -1;
+    if (firstDate > SecondDate) return 1;
+    return 0;
+    });
   }
 
 

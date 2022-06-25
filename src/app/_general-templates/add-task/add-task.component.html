@@ -8,13 +8,13 @@
         <form class="display-center-column" #addTask="ngForm" (submit)="submit(addTask.value);">
             <h3>{{_data.text.h3}}</h3>
             <p>{{_data.text.selectName}}</p>
-            <select *ngIf="choosingAddString != 'schedule'" type="text" name="subject" ngModel>
+            <select *ngIf="choosingAddString != ids.specificIDs[1]" type="text" name="subject" ngModel>
               <option *ngFor="let item of databank.icons" value="{{item}}">{{item}}</option>
             </select>
             <!-- By schedule you can use every Icon you want (BUT everybody can see every schedule…)-->
-            <input *ngIf="choosingAddString == 'schedule'" type="text" name="subject" ngModel>
+            <input *ngIf="choosingAddString == ids.specificIDs[1]" type="text" placeholder="{{_data.placeholders.cours}}" name="subject" ngModel>
 
-            <p *ngIf="addTask.value.subject == '' && choosingAddString != 'schedule'">{{_data.text.selectMissing}}</p>
+            <p *ngIf="addTask.value.subject == '' && choosingAddString != ids.specificIDs[1]">{{_data.text.selectMissing}}</p>
 
             <input maxlength="50" type="text" placeholder="{{_data.placeholders.task}}" name="task" ngModel>
             <p *ngIf="addTask.value.task == '' ">{{_data.text.taskMissing}}</p>
@@ -24,7 +24,8 @@
             <p *ngIf="addTask.value.date <= today && addTask.value.date != ''">{{_data.text.dateWrong}}</p>
 
             <br>
-            <p>{{_data.text.getting}}</p>
+            <p *ngIf="choosingAddString != ids.specificIDs[2]">{{_data.text.getting}}</p>
+            <p *ngIf="choosingAddString == ids.specificIDs[2]">{{_data.text.examenOrTest}}</p>
             <label class="toggle" for="getting">
                 <input class="toggle-input" id="getting"  type="checkbox" name="getting" ngModel>
                 <div class="toggle-fill"></div>

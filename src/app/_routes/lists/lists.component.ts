@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { DatabankService } from 'src/app/_services/databank/databank.service';
 import { Location } from '@angular/common';
 import { Tasks } from 'src/app/_interfaces/tasks';
+import { IdsService } from 'src/app/_services/ids/ids.service';
 
 @Component({
   selector: 'school-lists',
@@ -13,20 +14,22 @@ export class ListsComponent implements OnInit {
   public id!: string; //Important for card to can wrok right
   public item!: Tasks[];
 
-  constructor(public titleConfig:TitleConfigService, public databank:DatabankService, private _location: Location) { }
+  constructor(public titleConfig:TitleConfigService, public databank:DatabankService, private _location: Location, public ids:IdsService) { }
 
   ngOnInit(): void {
     if (location.pathname == '/terminliste') {
-      this.id = 'schedule';
+      this.id = this.ids.specificIDs[1];
       this.databank.getSchedules();
       this.item = this.databank.schedules;
-    }
-    else if (location.pathname == '/hausaufgaben') {
-      this.id = 'homework';
+    } else if (location.pathname == '/hausaufgaben') {
+      this.id = this.ids.specificIDs[0];
       this.databank.getTasks();
       this.item = this.databank.tasks;
+    } else if (location.pathname == '/pruefungen') {
+      this.id = this.ids.specificIDs[2];
+      this.databank.getExamens();
+      this.item = this.databank.examens;
     }
-
 
   }
 }
