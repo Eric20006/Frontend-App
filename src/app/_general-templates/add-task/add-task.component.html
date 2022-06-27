@@ -7,6 +7,12 @@
     <div class="max-z-index add-card">
         <form class="display-center-column" #addTask="ngForm" (submit)="submit(addTask.value);">
             <h3>{{_data.text.h3}}</h3>
+
+            <p *ngIf="choosingAddString == ids.specificIDs[3]">{{_data.text.selectWhichTask}}</p>
+            <select *ngIf="choosingAddString == ids.specificIDs[3]" type="text" name="choosingAdd" ngModel>
+              <option *ngFor="let item of _data.options" value="{{item.value}}">{{item.name}}</option>
+            </select>
+
             <p>{{_data.text.selectName}}</p>
             <select *ngIf="choosingAddString != ids.specificIDs[1]" type="text" name="subject" ngModel>
               <option *ngFor="let item of databank.icons" value="{{item}}">{{item}}</option>

@@ -4,6 +4,9 @@ import { DatabankService } from 'src/app/_services/databank/databank.service';
 import { Location } from '@angular/common';
 import { Tasks } from 'src/app/_interfaces/tasks';
 import { IdsService } from 'src/app/_services/ids/ids.service';
+import * as data from '../../../json/lists.json';
+import * as data2 from '../../../json/AllTasksChoosing.json';
+
 
 @Component({
   selector: 'school-lists',
@@ -13,8 +16,27 @@ import { IdsService } from 'src/app/_services/ids/ids.service';
 export class ListsComponent implements OnInit {
   public id!: string; //Important for card to can wrok right
   public item!: Tasks[];
+  public controlToggle: boolean[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  public _data: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  public _data2: any;
 
-  constructor(public titleConfig:TitleConfigService, public databank:DatabankService, private _location: Location, public ids:IdsService) { }
+  constructor(public titleConfig:TitleConfigService, public databank:DatabankService, private _location: Location, public ids:IdsService) {
+    this._data = data;
+    this._data2 = data2;
+    this.controlToggle = [true, true, true];
+  }
+
+  public toggle(value:string):void {
+    for (let i = 0; i < this.controlToggle.length; i++) {
+      if (value == this._data.allChoosingWhichTask[i].value) {
+        if (this.controlToggle[i]) this.controlToggle[i] = false;
+        else this.controlToggle[i] = true;
+        return console.log(true);
+      }
+    }
+  }
 
   ngOnInit(): void {
     if (location.pathname == '/terminliste') {
@@ -29,7 +51,17 @@ export class ListsComponent implements OnInit {
       this.id = this.ids.specificIDs[2];
       this.databank.getExamens();
       this.item = this.databank.examens;
+    } else if (location.pathname == '/gemischte_liste') {
+      this.databank.getSchedules();
+      this.databank.getExamens();
+      this.databank.getTasks();
+      this.databank.all();
+
+      this.id = this.ids.specificIDs[3];
+      this.item = this.databank.allTasks;
     }
 
   }
+
+
 }

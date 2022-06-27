@@ -11,6 +11,6 @@ export class IdsService {
   specificIDs: string[];
 
   constructor() {
-    this.specificIDs = ['homework', 'schedule', 'examens'];
+    this.specificIDs = ['homework', 'schedule', 'examens', 'all'];
    }
 }

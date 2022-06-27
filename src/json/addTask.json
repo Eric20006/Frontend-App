@@ -5,6 +5,7 @@
     },
     "text": {
         "h3": "Neue Aufgabe: ",
+        "selectWhichTask": "Welches",
         "selectName": "Kurs: ",
         "getting": "Wird die Aufgabe abgegeben?",
         "examenOrTest": "Ist es eine Klausur?",
@@ -17,5 +18,15 @@
     "placeholders": {
         "cours": "Muss nicht zwingend ausgefüllt werden",
         "task": "Aufgabe"
-    }
+    },
+    "options": [{
+        "name": "Hausaufgaben",
+        "value": "task"
+    }, {
+        "name": "Test",
+        "value": "examen"
+    }, {
+        "name": "Termin",
+        "value": "schedule"
+    }]
 }

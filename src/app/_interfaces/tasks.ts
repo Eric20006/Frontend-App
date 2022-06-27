@@ -4,5 +4,6 @@ export interface Tasks {
   date: string,
   __date: Date,
   getting: boolean,
-  icon: string
+  icon: string,
+  group: string,
 }

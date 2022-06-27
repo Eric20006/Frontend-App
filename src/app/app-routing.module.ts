@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'hausaufgaben', component: ListsComponent},
   {path: 'terminliste', component: ListsComponent},
   {path: 'pruefungen', component: ListsComponent},
-  {path: 'gemischte_liste', component: ErrorComponent},
+  {path: 'gemischte_liste', component: ListsComponent},
   {path: 'anmeldung', component: ErrorComponent},
   {path: 'kalender', component: ErrorComponent},
   {path: 'agb', component: ErrorComponent},

@@ -1,10 +1,20 @@
 <div class="wrapper overflow">
     <h2>{{titleConfig.titleConfig()}}</h2>
+
     <div *ngFor="let item of item">
-        <school-overview-card [choosingDeleteString]="id" [task]="item"></school-overview-card>
+        <div *ngIf="(item.group == _data2.task && controlToggle[0]) || (item.group == _data2.examen && controlToggle[1]) || (item.group == _data2.schedule && controlToggle[2])">
+            <school-overview-card [choosingDeleteString]="id" [task]="item"></school-overview-card>
+        </div>
     </div>
 
     <school-add-task [choosingAddString]="id"></school-add-task>
 
     <school-sort-slider *ngIf="id == ids.specificIDs[1]"></school-sort-slider>
+
+    <div *ngIf="id == ids.specificIDs[3]" class="bottom-left container">
+        <div *ngFor=" let item of _data.allChoosingWhichTask; let i = index">
+            <p>{{item.content}}</p>
+            <div class="choosing-show-tasks" (click)="toggle(item.value)" [ngClass]="{'default': !controlToggle[i]}"></div>
+        </div>
+    </div>
 </div>

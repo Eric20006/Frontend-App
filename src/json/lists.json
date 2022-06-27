@@ -1,0 +1,12 @@
+{
+    "allChoosingWhichTask": [{
+        "content": "Hausaufgaben",
+        "value": "homework"
+    }, {
+        "content": "Prüfung",
+        "value": "examen"
+    }, {
+        "content": "Termin",
+        "value": "schedule"
+    }]
+}

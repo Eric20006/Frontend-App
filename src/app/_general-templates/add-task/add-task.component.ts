@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { Tasks } from 'src/app/_interfaces/tasks';
 import { DatabankService } from 'src/app/_services/databank/databank.service';
 import * as data from '../../../json/addTask.json';
+import * as data2 from '../../../json/AllTasksChoosing.json';
 
 @Component({
   selector: 'school-add-task',
@@ -16,11 +17,15 @@ export class AddTaskComponent {
   private task!: Tasks;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public _data: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  public _data2: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
   constructor(public databank:DatabankService, public ids:IdsService) {
     this.showAddCard = false;
     this.today = new Date().toISOString().split('T')[0];
     this._data = data;
+    this._data2 = data2;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -37,20 +42,42 @@ export class AddTaskComponent {
 
     const newDay = new Date(value.date).getDate() + '.' + (new Date(value.date).getMonth() + 1) + '.' + new Date(value.date).getFullYear();
 
+
+
     this.task = {
       id: Date.now(),
       title: value.task,
       icon: value.subject,
       getting: __getting,
       date: newDay,
-      __date: new Date(value.date)
+      __date: new Date(value.date),
+      group: '',
     };
 
-    console.log(this.task);
+    console.log(value.choosingAdd);
 
-    if (this.choosingAddString == this.ids.specificIDs[0]) return this.databank.addTask(this.task);
-    if (this.choosingAddString == this.ids.specificIDs[1]) return this.databank.addSchedule(this.task);
-    if (this.choosingAddString == this.ids.specificIDs[2]) return this.databank.addExamen(this.task);
+    if (this.choosingAddString == this.ids.specificIDs[0]) {
+      this.task.group = this._data2.task;
+      return this.databank.addTask(this.task);
+    } if (this.choosingAddString == this.ids.specificIDs[1]){
+      this.task.group = this._data2.schedule;
+      return this.databank.addSchedule(this.task);
+    } if (this.choosingAddString == this.ids.specificIDs[2]){
+      this.task.group = this._data2.examen;
+      return this.databank.addExamen(this.task);
+    } if (this.choosingAddString == this.ids.specificIDs[3]) {
+        if (value.choosingAdd == 'task') {
+          this.task.group = this._data2.task;
+          this.databank.addTask(this.task);
+        } if (value.choosingAdd == 'examen') {
+          this.task.group = this._data2.examen;
+          this.databank.addSchedule(this.task);
+        } if (value.choosingAdd == 'schedule') {
+          this.task.group = this._data2.schedule;
+          this.databank.addExamen(this.task);
+        }
+        this.databank.addAll(this.task);
+    }
   }
 
 }

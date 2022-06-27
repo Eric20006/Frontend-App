@@ -9,6 +9,7 @@ export class DatabankService {
   public tasks!:Tasks[];
   public schedules!: Tasks[];
   public examens!: Tasks[];
+  public allTasks!: Tasks[];
   public icons!: string[];
   public changeScheduleSorting!:boolean;
   test!:string;             //TODO:
@@ -23,14 +24,16 @@ export class DatabankService {
       __date: new Date(),
       date: this.gettingDate(),
       getting: false,
-      icon: 'Geo1'
+      icon: 'Geo1',
+      group: 'task'
     },{
       id: 123,
       title: 'BS 10/2',
       __date: new Date(2022, 5, 2),
       date: '2.6.2022',
       getting: true,
-      icon: 'Ma2'
+      icon: 'Ma2',
+      group: 'task'
     },];
     console.log(this.tasks);
 
@@ -41,7 +44,7 @@ export class DatabankService {
   public deleteTask(task: Tasks):void {   //TODO:
     console.log('deleting');
     for (let i = 0; i < this.tasks.length; i++) {
-      if (this.tasks[i] == task ) this.tasks.splice(i, 1);
+      if (this.tasks[i] == task ) console.log('tst');this.tasks.splice(i, 1);
     }
   }
 
@@ -69,14 +72,16 @@ export class DatabankService {
       __date: new Date(),
       date: this.gettingDate(),
       getting: false,
-      icon: ''
+      icon: '',
+      group: 'schedule'
     },{
       id: 123,
       title: 'Schülervertretung',
       __date: new Date(2022, 5, 2),
       date: '2.6.2022',
       getting: false,
-      icon: 'SV'
+      icon: 'SV',
+      group: 'schedule'
     }];
 
     this.changeScheduleSorting = true;
@@ -85,7 +90,7 @@ export class DatabankService {
 
   public deleteSchedule (schedule: Tasks):void {
     for (let i = 0; i < this.schedules.length; i++) {
-      if (this.schedules[i] == schedule ) this.schedules.splice(i, 1);
+      if (this.schedules[i] == schedule )  this.schedules.splice(i, 1);
     }
   }
 
@@ -118,7 +123,8 @@ export class DatabankService {
       __date: new Date(),
       date: this.gettingDate(),
       getting: false,
-      icon: 'Deu1'
+      icon: 'Deu1',
+      group: 'examen'
     }];
 
     this.sortingExamen();
@@ -145,6 +151,44 @@ export class DatabankService {
     });
   }
 
+
+
+  //all
+  public all():void {
+    this.allTasks = [];
+    for (let i = 0; i < this.tasks.length; i++) {
+      this.allTasks.push(this.tasks[i]);
+    }
+    for (let i = 0; i < this.examens.length; i++) {
+      this.allTasks.push(this.examens[i]);
+    }
+    for (let i = 0; i < this.schedules.length; i++) {
+      this.allTasks.push(this.schedules[i]);
+    }
+    this.sortingAll();
+  }
+
+  public sortingAll():void {
+    this.allTasks.sort(function(a,b){
+      const firstDate = new Date(a.__date),
+          SecondDate = new Date(b.__date);
+    if (firstDate < SecondDate) return -1;
+    if (firstDate > SecondDate) return 1;
+    return 0;
+    });
+  }
+
+  public deleteAll(task:Tasks):void {
+    for (let i = 0; i < this.allTasks.length; i++) {
+      if (this.allTasks[i] == task) this.allTasks.splice(i, 1);
+    }
+  }
+
+  public addAll (task:Tasks):void {
+    this.allTasks.push(task);
+    this.sortingAll();
+
+  }
 
   //General
   private gettingDate():string { //TODO:
