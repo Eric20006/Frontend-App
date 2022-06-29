@@ -10,6 +10,7 @@
         "getting": "Wird die Aufgabe abgegeben?",
         "examenOrTest": "Ist es eine Klausur?",
 
+        "AllSelectMissing": "Welches fehlt.",
         "selectMissing": "Kurs fehlt.",
         "taskMissing": "Aufgabe fehlt.",
         "dateMissing": "Datum fehlt.",

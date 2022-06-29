@@ -1,0 +1,13 @@
+!Important Explanation To Add A New List-Component!
+
+1. Add a new Path in app-routing.module.ts
+2. Open lists-component
+3. In 'ngOnInit' new else-if with (location.pathname == '/newPath');
+4. add Databank-Structure, set id = this.ids.specificIDs[i] (You have to go the service ids-service and add this name), set item = databank variable
+5. Open overview-card-component and add if else in choosingDelete() (you have to add a delete function in database)
+6. Open add-task-component and add a if statement in the correct pattern (you have to add a add function in database)
+7. Special changes you have to edit the code only in this three components (and in the including components)
+
+Caution: You have to write a  special group-id (group:) and you have to fill in this in every component where it is necessary.
+
+IMPORTANT:  Changes are possible.

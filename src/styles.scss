@@ -9,7 +9,7 @@ body {
     width: 100vw;
     margin: 0;
     padding: 0;
-    font-size: 20px;
+    font-size: $static-scale * 5;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -68,7 +68,7 @@ p {
 
 a {
     text-decoration: none !important;
-    transition: 0.5s all !important;
+    transition: $normal-transition all !important;
     &:hover {
         color: $special-color !important;
         text-decoration: underline !important;
@@ -76,28 +76,33 @@ a {
 }
 
 input,
-select {
+select,
+button {
     outline: none !important;
     border: none !important;
     width: 50% !important;
-    margin: 8px !important;
-    border-radius: 10px !important;
+    margin: $static-scale * 2 !important;
+    border-radius: $normal-border !important;
     height: $scale-height * 1.2 !important;
     text-align: center !important;
     font-family: Arial, Helvetica, sans-serif !important;
     font-size: $scale-height * 0.6 !important;
+    text-align: center !important;
 }
 
 button {
-    outline: none !important;
-    border: none !important;
-    margin: 8px !important;
-    border-radius: 10px !important;
-    text-align: center !important;
-    font-family: Arial, Helvetica, sans-serif !important;
     width: $scale-width * 2 !important;
     height: $scale-width * 1 !important;
     cursor: pointer;
+}
+
+//Margin Patterns
+.outer-p {
+    margin: $scale-height * 0.8 0;
+}
+
+.outer-title {
+    margin-bottom: $static-scale * 3.5;
 }
 
 //Main Theme Choosing
@@ -119,7 +124,7 @@ button {
         color: $fontLight;
         background-color: $primeLight;
         &::placeholder {
-            color: $fontLight;
+            color: lighten $fontLight;
         }
     }
     button {
@@ -131,6 +136,9 @@ button {
         &::after {
             background-color: $fontLight;
         }
+    }
+    .anti-show {
+        background-color: transparentize($color: $primeLight, $amount: 0.2);
     }
 }
 
@@ -165,19 +173,22 @@ button {
             background-color: $fontDark;
         }
     }
+    .anti-show {
+        background-color: transparentize($color: $primeDark, $amount: 0.1);
+    }
 }
 
 //Slider
 .toggle {
     display: flex;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: $circle-border;
     width: $scale-height * 2.4;
-    margin: 8px;
+    margin: $static-scale * 2;
     .toggle-input {
         display: none;
         &:checked~.toggle-fill {
-            background: green;
+            background: $true;
             &::after {
                 transform: translateX($scale-height * 1.2);
             }
@@ -187,8 +198,8 @@ button {
         position: relative;
         width: $scale-height * 2.4;
         height: $scale-height * 1.2;
-        border-radius: 10px;
-        transition: background 0.2s;
+        border-radius: $circle-border;
+        transition: background $short-transition;
         &::after {
             content: "";
             position: absolute;
@@ -196,31 +207,28 @@ button {
             left: 0;
             height: $scale-height * 1.2;
             width: $scale-height * 1.2;
-            border-radius: 10px;
-            transition: transform 0.2s;
+            border-radius: $circle-border;
+            transition: transform $short-transition;
         }
     }
 }
 
-//bottom Clickies
+//bottom Clickies (Left Bottom)
 .bottom-left {
     position: fixed;
     bottom: $scale-height * 1;
     display: flex;
-    label {
-        transform: translateY(-25%);
-    }
 }
 
 //Tablets Computer
-@media screen and (min-width: 700px) {
+@media screen and (min-width: $screen-scale) {
     .bottom-left {
         left: $scale-width * 8; // has to be the same + 1 like the sidelist width
     }
 }
 
 //Mobile
-@media screen and (max-width: 700px) {
+@media screen and (max-width: $screen-scale) {
     .bottom-left {
         left: $scale-width * 1;
     }
@@ -230,14 +238,14 @@ button {
 .wrapper {
     position: absolute;
     height: 100%;
-    padding: 16px;
+    padding: $static-scale * 4;
     box-sizing: border-box;
     overflow: scroll;
-    padding-bottom: $scale-height * 5.3;
+    padding-bottom: $scale-height * 6;
 }
 
 //Tablets Computer
-@media screen and (min-width: 700px) {
+@media screen and (min-width: $screen-scale) {
     .wrapper {
         left: $scale-width * 7; // has to be the same like the sidelist width
         top: 0;
@@ -246,10 +254,10 @@ button {
 }
 
 //Mobile
-@media screen and (max-width: 700px) {
+@media screen and (max-width: $screen-scale) {
     .wrapper {
         left: 0;
-        top: 50px;
+        top: $static-scale * 12.5;
         width: 100%;
     }
 }

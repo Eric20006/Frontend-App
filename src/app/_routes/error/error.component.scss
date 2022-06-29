@@ -11,29 +11,29 @@
     width: 100%;
     height: 100%;
     .container {
-        padding: 10px;
+        padding: $static-scale * 2.5;
         box-sizing: border-box;
         h1 {
-            margin-bottom: 10px !important;
+            margin-bottom: $static-scale * 2.5 !important;
         }
         p {
-            margin: 10px 0 !important;
+            margin: $static-scale * 2.5 0 !important;
             text-align: center;
         }
     }
 }
 
 //Tablets Computers
-@media screen and (min-width: 700px) {
+@media screen and (min-width: $screen-scale) {
     .container {
         width: 66%;
         height: 33%;
-        border-radius: 15px;
+        border-radius: $normal-border;
     }
 }
 
 //Mobile
-@media screen and (max-width: 700px) {
+@media screen and (max-width: $screen-scale) {
     .container {
         width: 100%;
         height: 66%;

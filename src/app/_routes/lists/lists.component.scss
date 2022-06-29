@@ -4,19 +4,26 @@
 
 .container {
     display: flex;
-    flex-direction: column !important;
-    p {
-        margin-right: $scale-height * 0.3 !important;
+    .inner-container {
+        position: relative;
+        height: min-content;
+        display: flex;
+        flex-direction: column;
+        .content {
+            display: flex;
+            height: $scale-height * 1.5;
+            align-items: center;
+            p {
+                margin-right: $scale-height * 0.4 !important;
+            }
+            .choosing-show-tasks {
+                background-color: $special-color;
+                height: $scale-height * 1;
+                width: $scale-height * 1;
+                border-radius: $normal-border;
+            }
+        }
     }
-    .choosing-show-tasks {
-        background-color: $special-color;
-        height: $scale-height * 1;
-        width: $scale-height * 1;
-        margin: $scale-height * 0.1 150px;
-        transform: translateY(-100%);
-        border-radius: 10px;
-    }
-    .default {}
 }
 
 // Its important because an [ngClass] can only get information from the component scss file (I think)

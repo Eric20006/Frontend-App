@@ -2,16 +2,19 @@
     <mat-icon>{{_data.icons.addCardIcon}}</mat-icon>
 </div>
 
-<div *ngIf="showAddCard" class="container">
+<div *ngIf="showAddCard" class="container max-z-index">
     <div class="min-z-index anti-show" (click)="showAddCard = false"></div>
-    <div class="max-z-index add-card">
+    <div class="max-z-index add-card second-theme-color">
         <form class="display-center-column" #addTask="ngForm" (submit)="submit(addTask.value);">
-            <h3>{{_data.text.h3}}</h3>
+            <div class="outer-title">
+                <h3>{{_data.text.h3}}</h3>
+            </div>
 
             <p *ngIf="choosingAddString == ids.specificIDs[3]">{{_data.text.selectWhichTask}}</p>
             <select *ngIf="choosingAddString == ids.specificIDs[3]" type="text" name="choosingAdd" ngModel>
               <option *ngFor="let item of _data.options" value="{{item.value}}">{{item.name}}</option>
             </select>
+            <p class="missing" *ngIf="addTask.value.choosingAdd == '' && choosingAddString == ids.specificIDs[3]">{{_data.text.AllSelectMissing}}</p>
 
             <p>{{_data.text.selectName}}</p>
             <select *ngIf="choosingAddString != ids.specificIDs[1]" type="text" name="subject" ngModel>
@@ -20,14 +23,14 @@
             <!-- By schedule you can use every Icon you want (BUT everybody can see every schedule…)-->
             <input *ngIf="choosingAddString == ids.specificIDs[1]" type="text" placeholder="{{_data.placeholders.cours}}" name="subject" ngModel>
 
-            <p *ngIf="addTask.value.subject == '' && choosingAddString != ids.specificIDs[1]">{{_data.text.selectMissing}}</p>
+            <p class="missing" *ngIf="addTask.value.subject == '' && choosingAddString != ids.specificIDs[1]">{{_data.text.selectMissing}}</p>
 
             <input maxlength="50" type="text" placeholder="{{_data.placeholders.task}}" name="task" ngModel>
-            <p *ngIf="addTask.value.task == '' ">{{_data.text.taskMissing}}</p>
+            <p class="missing" *ngIf="addTask.value.task == '' ">{{_data.text.taskMissing}}</p>
 
             <input type="date" name="date" ngModel>
-            <p *ngIf="addTask.value.date == '' ">{{_data.text.dateMissing}}</p>
-            <p *ngIf="addTask.value.date <= today && addTask.value.date != ''">{{_data.text.dateWrong}}</p>
+            <p class="missing" *ngIf="addTask.value.date == '' ">{{_data.text.dateMissing}}</p>
+            <p class="missing" *ngIf="addTask.value.date <= today && addTask.value.date != ''">{{_data.text.dateWrong}}</p>
 
             <br>
             <p *ngIf="choosingAddString != ids.specificIDs[2]">{{_data.text.getting}}</p>

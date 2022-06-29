@@ -1,5 +1,16 @@
 //Scale variables
 $scale-height: 3vh;
 $scale-width: 3vw;
+$static-scale: 4px;
 //Special Color
 $special-color: rgb(46, 133, 255);
+$true: green;
+$false: red;
+//Border Radius
+$normal-border: 10px;
+$circle-border: 90px;
+//transitoin-times
+$normal-transition: 0.5s;
+$short-transition: 0.2s;
+//media screen and (min/max-widtth) {}
+$screen-scale: 700px;
