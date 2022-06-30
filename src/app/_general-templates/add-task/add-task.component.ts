@@ -48,6 +48,7 @@ export class AddTaskComponent {
       id: Date.now(),
       title: value.task,
       icon: value.subject,
+      information: value.information,
       getting: __getting,
       date: newDay,
       __date: new Date(value.date),

@@ -25,8 +25,11 @@
 
             <p class="missing" *ngIf="addTask.value.subject == '' && choosingAddString != ids.specificIDs[1]">{{_data.text.selectMissing}}</p>
 
-            <input maxlength="50" type="text" placeholder="{{_data.placeholders.task}}" name="task" ngModel>
-            <p class="missing" *ngIf="addTask.value.task == '' ">{{_data.text.taskMissing}}</p>
+            <input maxlength="50" type="text" placeholder="{{_data.placeholders.title}}" name="task" ngModel>
+            <p class="missing" *ngIf="addTask.value.task == '' ">{{_data.text.titleMissing}}</p>
+
+            <textarea type="text" placeholder="{{_data.placeholders.task}}" name="information" wrap="soft" cols=40 ngModel> </textarea>
+            <p class="missing" *ngIf="addTask.value.information== '' ">{{_data.text.taskMissing}}</p>
 
             <input type="date" name="date" ngModel>
             <p class="missing" *ngIf="addTask.value.date == '' ">{{_data.text.dateMissing}}</p>

@@ -77,7 +77,8 @@ a {
 
 input,
 select,
-button {
+button,
+textarea {
     outline: none !important;
     border: none !important;
     width: 50% !important;
@@ -88,12 +89,17 @@ button {
     font-family: Arial, Helvetica, sans-serif !important;
     font-size: $scale-height * 0.6 !important;
     text-align: center !important;
+    resize: none;
 }
 
 button {
     width: $scale-width * 2 !important;
     height: $scale-width * 1 !important;
     cursor: pointer;
+}
+
+textarea {
+    height: $scale-height * 2 !important;
 }
 
 //Margin Patterns
@@ -120,7 +126,8 @@ button {
         color: $fontLight;
     }
     input,
-    select {
+    select,
+    textarea {
         color: $fontLight;
         background-color: $primeLight;
         &::placeholder {
@@ -156,7 +163,8 @@ button {
         color: $fontDark;
     }
     input,
-    select {
+    select,
+    textarea {
         color: $fontDark;
         background-color: $primeDark;
         &::placeholder {

@@ -25,7 +25,8 @@ export class DatabankService {
       date: this.gettingDate(),
       getting: false,
       icon: 'Geo1',
-      group: 'task'
+      group: 'task',
+      information: 'sadfgd'
     },{
       id: 123,
       title: 'BS 10/2',
@@ -33,7 +34,8 @@ export class DatabankService {
       date: '2.6.2022',
       getting: true,
       icon: 'Ma2',
-      group: 'task'
+      group: 'task',
+      information: 'sadfgd'
     },];
     console.log(this.tasks);
 
@@ -73,7 +75,8 @@ export class DatabankService {
       date: this.gettingDate(),
       getting: false,
       icon: '',
-      group: 'schedule'
+      group: 'schedule',
+      information: 'sadfgd'
     },{
       id: 123,
       title: 'Schülervertretung',
@@ -81,7 +84,8 @@ export class DatabankService {
       date: '2.6.2022',
       getting: false,
       icon: 'SV',
-      group: 'schedule'
+      group: 'schedule',
+      information: 'sadfgd'
     }];
 
     this.changeScheduleSorting = true;
@@ -124,7 +128,8 @@ export class DatabankService {
       date: this.gettingDate(),
       getting: false,
       icon: 'Deu1',
-      group: 'examen'
+      group: 'examen',
+      information: 'sadfgd'
     }];
 
     this.sortingExamen();

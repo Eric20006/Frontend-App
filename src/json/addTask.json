@@ -12,12 +12,14 @@
 
         "AllSelectMissing": "Welches fehlt.",
         "selectMissing": "Kurs fehlt.",
+        "titleMissing": "Titel fehlt.",
         "taskMissing": "Aufgabe fehlt.",
         "dateMissing": "Datum fehlt.",
         "dateWrong": "Wähle ein zukünftiges Datum aus."
     },
     "placeholders": {
         "cours": "Muss nicht zwingend ausgefüllt werden",
+        "title": "Titel",
         "task": "Aufgabe"
     },
     "options": [{
