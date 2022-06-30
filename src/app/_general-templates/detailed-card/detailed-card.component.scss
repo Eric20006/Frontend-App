@@ -1,0 +1,27 @@
+@import '../../../scss/export';
+
+/* Start */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    p {
+        margin-bottom: $static-scale * 2.5 !important;
+    }
+    .alert {
+        color: $false;
+    }
+    .content-content {
+        width: 60%;
+        border-radius: $normal-border;
+        min-height: 30%;
+        height: min-content;
+        max-height: 55%;
+        overflow: scroll;
+        padding: $static-scale * 2;
+    }
+}

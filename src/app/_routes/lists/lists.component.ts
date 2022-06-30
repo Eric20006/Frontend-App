@@ -1,3 +1,4 @@
+import { DetailedContentService } from './../../_services/detailed-content/detailed-content.service';
 import { TitleConfigService } from './../../_services/title-config/title-config.service';
 import { Component, OnInit } from '@angular/core';
 import { DatabankService } from 'src/app/_services/databank/databank.service';
@@ -6,6 +7,8 @@ import { Tasks } from 'src/app/_interfaces/tasks';
 import { IdsService } from 'src/app/_services/ids/ids.service';
 import * as data from '../../../json/lists.json';
 import * as data2 from '../../../json/AllTasksChoosing.json';
+import * as data3 from '../../../json/cardIcons.json';
+
 
 
 @Component({
@@ -21,11 +24,20 @@ export class ListsComponent implements OnInit {
   public _data: any;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public _data2: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  public _data3: any;
 
-  constructor(public titleConfig:TitleConfigService, public databank:DatabankService, private _location: Location, public ids:IdsService) {
+  public tomorrowDate: number;
+  public date: number;
+
+  constructor(public titleConfig:TitleConfigService, public databank:DatabankService, private _location: Location, public ids:IdsService, public detailedContent:DetailedContentService) {
     this._data = data;
     this._data2 = data2;
+    this._data3 = data3;
     this.controlToggle = [true, true, true];
+    this.date = new Date().getTime();
+    this.tomorrowDate = new Date().setDate(new Date().getDate() + 1);
+
   }
 
   public toggle(value:string):void {

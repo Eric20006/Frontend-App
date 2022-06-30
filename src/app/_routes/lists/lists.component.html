@@ -3,11 +3,55 @@
         <h2>{{titleConfig.titleConfig()}}</h2>
     </div>
 
-    <div *ngFor="let item of item">
-        <div *ngIf="(item.group == _data2.task && controlToggle[0]) || (item.group == _data2.examen && controlToggle[1]) || (item.group == _data2.schedule && controlToggle[2])">
-            <school-overview-card [choosingDeleteString]="id" [task]="item"></school-overview-card>
+    <div *ngIf="item[0] != undefined">
+        <div *ngIf="id != ids.specificIDs[1]">
+            <div class="outer-p">
+                <p>{{_data3.yesterday}}</p>
+            </div>
+            <div *ngFor="let item of item;">
+                <div *ngIf="(item.group == _data2.task && controlToggle[0]) || (item.group == _data2.examen && controlToggle[1]) || (item.group == _data2.schedule && controlToggle[2])">
+                    <div *ngIf=" item.__date.getTime() < date">
+                        <school-overview-card [choosingDeleteString]="id" [task]="item"></school-overview-card>
+                    </div>
+                </div>
+            </div>
+
+            <div class="outer-p">
+                <p>{{_data3.today}}</p>
+            </div>
+            <div *ngFor="let item of item;">
+                <div *ngIf="(item.group == _data2.task && controlToggle[0]) || (item.group == _data2.examen && controlToggle[1]) || (item.group == _data2.schedule && controlToggle[2])">
+                    <div *ngIf="item.__date.getTime() > date && item.__date.getTime() < tomorrowDate">
+                        <school-overview-card [choosingDeleteString]="id" [task]="item"></school-overview-card>
+                    </div>
+                </div>
+            </div>
+
+            <div class="outer-p">
+                <p>{{_data3.tomorrow}}</p>
+            </div>
+            <div *ngFor="let item of item;">
+                <div *ngIf="(item.group == _data2.task && controlToggle[0]) || (item.group == _data2.examen && controlToggle[1]) || (item.group == _data2.schedule && controlToggle[2])">
+                    <div *ngIf="item.__date.getTime() > tomorrowDate">
+                        <school-overview-card [choosingDeleteString]="id" [task]="item"></school-overview-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div *ngIf="id == ids.specificIDs[1]">
+            <div *ngFor="let item of item;">
+                <school-overview-card [choosingDeleteString]="id" [task]="item"></school-overview-card>
+            </div>
         </div>
     </div>
+
+    <div *ngIf="item[0] == undefined"> juchu</div>
+
+    <!-- Important hint: There are 3 same coding structures -> it is important to structure the tasks in this three categories + wildcard-->
+
+    <school-detailed-card *ngIf="detailedContent.control"></school-detailed-card>
 
     <school-add-task [choosingAddString]="id"></school-add-task>
 

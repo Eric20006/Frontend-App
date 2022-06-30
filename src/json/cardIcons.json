@@ -4,5 +4,6 @@
     "crossingIconCheck": "check_circle_outline",
 
     "yesterday": "Abgelaufen (Bitte Löschen):",
-    "tomorrow": "Morgen ist Abgabefrist:"
+    "today": "Dringlich:",
+    "tomorrow": "Später:"
 }

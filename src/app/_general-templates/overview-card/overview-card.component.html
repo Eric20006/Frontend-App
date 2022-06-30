@@ -1,13 +1,8 @@
-<div class="outer-p">
-    <p *ngIf="date > task.__date">{{_data.yesterday}}</p>
-    <p *ngIf="todayDate < task.date &&  tomorrowDate == task.date">{{_data.tomorrow}}</p>
-</div>
-
 <div class="container second-theme-color-transparency">
     <div class="icon-container display-center-row main-theme-color">
         <p>{{task.icon}}</p>
     </div>
-    <div class="title-container">
+    <div class="title-container" (click)="detailedContent.getDetailedContent(task)">
         <p>{{task.title}}</p>
     </div>
     <div class="date-container">

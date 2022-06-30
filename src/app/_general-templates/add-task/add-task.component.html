@@ -2,7 +2,7 @@
     <mat-icon>{{_data.icons.addCardIcon}}</mat-icon>
 </div>
 
-<div *ngIf="showAddCard" class="container max-z-index">
+<div *ngIf="showAddCard" class="container max-z-index fixed-container">
     <div class="min-z-index anti-show" (click)="showAddCard = false"></div>
     <div class="max-z-index add-card second-theme-color">
         <form class="display-center-column" #addTask="ngForm" (submit)="submit(addTask.value);">

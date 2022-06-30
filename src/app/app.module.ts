@@ -14,6 +14,7 @@ import { AddTaskComponent } from './_general-templates/add-task/add-task.compone
 import { FormsModule } from '@angular/forms';
 import { ListsComponent } from './_routes/lists/lists.component';
 import { SortSliderComponent } from './_general-templates/sort-slider/sort-slider.component';
+import { DetailedCardComponent } from './_general-templates/detailed-card/detailed-card.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SortSliderComponent } from './_general-templates/sort-slider/sort-slide
     AddTaskComponent,
     ListsComponent,
     SortSliderComponent,
+    DetailedCardComponent,
   ],
   imports: [
     BrowserModule,

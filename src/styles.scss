@@ -261,3 +261,31 @@ button {
         width: 100%;
     }
 }
+
+//Fixed-Container
+.fixed-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    .anti-show {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        filter: blur(3px);
+    }
+    .add-card {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        border-radius: $normal-border;
+        padding: $static-scale * 2.5;
+        box-sizing: border-box;
+        height: $scale-height * 20;
+        width: $scale-width * 20;
+        transform: translate(-50%, -50%);
+        border: $static-scale * 0.5 solid $special-color;
+    }
+}

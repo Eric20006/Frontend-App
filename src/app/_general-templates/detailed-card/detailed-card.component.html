@@ -1,0 +1,18 @@
+<div class="fixed-container">
+    <div class="min-z-index anti-show" (click)="detailedContent.control = false"></div>
+    <div class="max-z-index add-card second-theme-color">
+        <div class="content">
+            <div class="outer-p">
+                <h3><b>{{detailedContent.task.icon}}</b>, {{detailedContent.task.title}}</h3>
+            </div>
+
+            <p><b>Datum: </b>{{detailedContent.task.date}}</p>
+            <p *ngIf="detailedContent.task.getting" class="alert"> <b>Wird abgeben</b></p>
+            <p *ngIf="!detailedContent.task.getting">Wird nicht abgegeben</p>
+
+            <div class="content-content main-theme-color">
+                <p>Content is missing</p>
+            </div>
+        </div>
+    </div>
+</div>
