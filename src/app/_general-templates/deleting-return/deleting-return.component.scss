@@ -1,0 +1,12 @@
+@import '../../../scss/export';
+
+/* Start: */
+
+.container {
+    position: fixed;
+    top: $scale-height * 2;
+    right: $scale-height * 2;
+    padding: $static-scale * 2.5;
+    border-radius: $normal-border;
+    border: solid $static-scale * 0.5 $special-color;
+}

@@ -47,13 +47,15 @@
         </div>
     </div>
 
-    <div *ngIf="item[0] == undefined"> juchu</div>
+    <school-no-tasks *ngIf="item[0] == undefined"></school-no-tasks>
 
     <!-- Important hint: There are 3 same coding structures -> it is important to structure the tasks in this three categories + wildcard-->
 
     <school-detailed-card *ngIf="detailedContent.control"></school-detailed-card>
 
     <school-add-task [choosingAddString]="id"></school-add-task>
+
+    <school-deleting-return *ngIf="deletingReturn.control" (click)="deletingReturn.control = false;"></school-deleting-return>
 
     <school-sort-slider *ngIf="id == ids.specificIDs[1]"></school-sort-slider>
 

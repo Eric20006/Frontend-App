@@ -1,3 +1,4 @@
+import { DeletingReturnService } from './../../_services/deleting-retur/deleting-return.service';
 import { DetailedContentService } from './../../_services/detailed-content/detailed-content.service';
 import { TitleConfigService } from './../../_services/title-config/title-config.service';
 import { Component, OnInit } from '@angular/core';
@@ -30,7 +31,7 @@ export class ListsComponent implements OnInit {
   public tomorrowDate: number;
   public date: number;
 
-  constructor(public titleConfig:TitleConfigService, public databank:DatabankService, private _location: Location, public ids:IdsService, public detailedContent:DetailedContentService) {
+  constructor(public titleConfig:TitleConfigService, public databank:DatabankService, private _location: Location, public ids:IdsService, public detailedContent:DetailedContentService, public deletingReturn:DeletingReturnService) {
     this._data = data;
     this._data2 = data2;
     this._data3 = data3;

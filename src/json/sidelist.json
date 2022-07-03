@@ -29,23 +29,13 @@
     "id": 5,
     "path": "gemischte_liste"
 }, {
-    "name": "Anmeldung",
-    "matIcon": "lock_open",
+    "name": "Einstellung",
+    "matIcon": "settings",
     "id": 6,
-    "path": "anmeldung"
+    "path": "einstellung"
 }, {
     "name": "Kalender",
     "matIcon": "calendar_today",
     "id": 7,
     "path": "kalender"
-}, {
-    "name": "AGBs",
-    "matIcon": "local_post_office",
-    "id": 8,
-    "path": "agb"
-}, {
-    "name": "Über uns",
-    "matIcon": "person_pin",
-    "id": 9,
-    "path": "ueber_uns"
 }]

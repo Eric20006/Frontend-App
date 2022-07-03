@@ -15,6 +15,9 @@ import { FormsModule } from '@angular/forms';
 import { ListsComponent } from './_routes/lists/lists.component';
 import { SortSliderComponent } from './_general-templates/sort-slider/sort-slider.component';
 import { DetailedCardComponent } from './_general-templates/detailed-card/detailed-card.component';
+import { NoTasksComponent } from './_general-templates/no-tasks/no-tasks.component';
+import { DeletingReturnComponent } from './_general-templates/deleting-return/deleting-return.component';
+import { SettingsComponent } from './_routes/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { DetailedCardComponent } from './_general-templates/detailed-card/detail
     ListsComponent,
     SortSliderComponent,
     DetailedCardComponent,
+    NoTasksComponent,
+    DeletingReturnComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,

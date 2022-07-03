@@ -1,3 +1,4 @@
+import { SettingsComponent } from './_routes/settings/settings.component';
 import { ListsComponent } from './_routes/lists/lists.component';
 import { OverviewComponent } from './_routes/overview/overview.component';
 import { ErrorComponent } from './_routes/error/error.component';
@@ -12,10 +13,8 @@ const routes: Routes = [
   {path: 'terminliste', component: ListsComponent},
   {path: 'pruefungen', component: ListsComponent},
   {path: 'gemischte_liste', component: ListsComponent},
-  {path: 'anmeldung', component: ErrorComponent},
+  {path: 'einstellung', component: SettingsComponent},
   {path: 'kalender', component: ErrorComponent},
-  {path: 'agb', component: ErrorComponent},
-  {path: 'ueber_uns', component: ErrorComponent},
 
   //ErrorMsgs + Wildcard
   {path: '404', component: ErrorComponent},
