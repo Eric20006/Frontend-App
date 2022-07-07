@@ -1,3 +1,4 @@
+import { TitleConfigService } from './../../_services/title-config/title-config.service';
 import { AccountService } from './../../_services/account/account.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewComponent implements OnInit {
 
-  constructor(private account:AccountService) { }
+  constructor(private account:AccountService, public titleConfig:TitleConfigService) { }
 
   ngOnInit(): void {
     if (!this.account.control()) return;
