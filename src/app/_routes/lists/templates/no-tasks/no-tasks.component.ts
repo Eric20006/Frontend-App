@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as data from '../../../json/noTasks.json';
+import * as data from '../../../../../json/noTasks.json';
 
 @Component({
   selector: 'school-no-tasks',

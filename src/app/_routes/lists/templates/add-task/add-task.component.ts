@@ -1,9 +1,9 @@
-import { IdsService } from './../../_services/ids/ids.service';
+import { IdsService } from './../../../../_services/ids/ids.service';
 import { Component, Input } from '@angular/core';
 import { Tasks } from 'src/app/_interfaces/tasks';
 import { DatabankService } from 'src/app/_services/databank/databank.service';
-import * as data from '../../../json/addTask.json';
-import * as data2 from '../../../json/AllTasksChoosing.json';
+import * as data from '../../../../../json/addTask.json';
+import * as data2 from '../../../../../json/AllTasksChoosing.json';
 
 @Component({
   selector: 'school-add-task',

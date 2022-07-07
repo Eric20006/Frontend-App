@@ -1,6 +1,6 @@
 import { DatabankService } from 'src/app/_services/databank/databank.service';
 import { Component } from '@angular/core';
-import * as data from '../../../json/sortSlider.json';
+import * as data from '../../../../../json/sortSlider.json';
 
 @Component({
   selector: 'school-sort-slider',

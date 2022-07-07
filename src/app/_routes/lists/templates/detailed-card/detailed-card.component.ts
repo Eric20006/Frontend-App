@@ -1,4 +1,4 @@
-import { DetailedContentService } from './../../_services/detailed-content/detailed-content.service';
+import { DetailedContentService } from './../../../../_services/detailed-content/detailed-content.service';
 import { Component } from '@angular/core';
 
 @Component({

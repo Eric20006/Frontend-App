@@ -1,6 +1,6 @@
-import { DeletingReturnService } from './../../_services/deleting-retur/deleting-return.service';
+import { DeletingReturnService } from './../../../../_services/deleting-retur/deleting-return.service';
 import { Component, OnInit } from '@angular/core';
-import * as data from '../../../json/deleteReturn.json';
+import * as data from '../../../../../json/deleteReturn.json';
 
 @Component({
   selector: 'school-deleting-return',

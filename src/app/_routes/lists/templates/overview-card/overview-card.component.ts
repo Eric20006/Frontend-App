@@ -1,11 +1,11 @@
-import { DeletingReturnService } from './../../_services/deleting-retur/deleting-return.service';
-import { DetailedContentService } from './../../_services/detailed-content/detailed-content.service';
+import { DeletingReturnService } from './../../../../_services/deleting-retur/deleting-return.service';
+import { DetailedContentService } from './../../../../_services/detailed-content/detailed-content.service';
 import { Component, Input } from '@angular/core';
 import { Tasks } from 'src/app/_interfaces/tasks';
 import { DatabankService } from 'src/app/_services/databank/databank.service';
 import { IdsService } from 'src/app/_services/ids/ids.service';
-import * as data from '../../../json/cardIcons.json';
-import * as data2 from '../../../json/AllTasksChoosing.json';
+import * as data from '../../../../../json/cardIcons.json';
+import * as data2 from '../../../../../json/AllTasksChoosing.json';
 
 
 @Component({
