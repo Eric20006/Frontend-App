@@ -27,16 +27,17 @@ export class RootTestService {
     console.log('Is Testing');
     for (let i = 0; i < this.sideList.length; i++) {
       for (let _i = i + 1; _i < this.sideList.length; _i++) {
-        if (this.sideList[i].name == this.sideList[_i].name) return this.errorCall();
-        if (this.sideList[i].matIcon == this.sideList[_i].matIcon) return this.errorCall();
-        if (this.sideList[i].id == this.sideList[_i].id) return this.errorCall();
-        if (this.sideList[i].path == this.sideList[_i].path) return this.errorCall();
+        if (this.sideList[i].name == this.sideList[_i].name) return this.errorCall('name');
+        if (this.sideList[i].matIcon == this.sideList[_i].matIcon) return this.errorCall('matIcon');
+        if (this.sideList[i].id == this.sideList[_i].id) return this.errorCall('id');
+        if (this.sideList[i].path == this.sideList[_i].path) return this.errorCall('path');
       }
     }
   }
 
-  private errorCall(): void {
+  private errorCall(value:string): void {
     console.error('Error');
+    console.warn(value);
     console.log('Überprüfe: Hat es nur etwas mit den JSON-Dateien zu tun oder hast du auch einen Fehler im Routing File gemacht.');
     this.router.navigate(['/test']);
   }

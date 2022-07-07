@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { AccountService } from './../account/account.service';
 import { Injectable } from '@angular/core';
 import { Tasks } from 'src/app/_interfaces/tasks';
 
@@ -14,7 +16,7 @@ export class DatabankService {
   public changeScheduleSorting!:boolean;
   test!:string;             //TODO:
 
-
+  constructor(private account:AccountService, private router:Router){}
   //Tasks
 
   public getTasks():void {
@@ -207,6 +209,11 @@ export class DatabankService {
       'Deu1', 'Mat2', 'Eng3', 'Geo1', 'Inf'
     ];
   }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  public login(value:any):void {
+    console.log(value);
+    this.account.login();
+    this.router.navigate(['/']);
+  }
 }
-
-

@@ -1,3 +1,4 @@
+import { AccountService } from './../../_services/account/account.service';
 import { DeletingReturnService } from './../../_services/deleting-retur/deleting-return.service';
 import { DetailedContentService } from './../../_services/detailed-content/detailed-content.service';
 import { TitleConfigService } from './../../_services/title-config/title-config.service';
@@ -31,7 +32,7 @@ export class ListsComponent implements OnInit {
   public tomorrowDate: number;
   public date: number;
 
-  constructor(public titleConfig:TitleConfigService, public databank:DatabankService, private _location: Location, public ids:IdsService, public detailedContent:DetailedContentService, public deletingReturn:DeletingReturnService) {
+  constructor(public titleConfig:TitleConfigService, public databank:DatabankService, private _location: Location, public ids:IdsService, public detailedContent:DetailedContentService, public deletingReturn:DeletingReturnService, private account:AccountService) {
     this._data = data;
     this._data2 = data2;
     this._data3 = data3;
@@ -52,6 +53,8 @@ export class ListsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (!this.account.control()) return;
+
     if (location.pathname == '/terminliste') {
       this.id = this.ids.specificIDs[1];
       this.databank.getSchedules();

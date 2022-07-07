@@ -1,3 +1,4 @@
+import { AccountService } from './../../_services/account/account.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private account:AccountService) { }
 
   ngOnInit(): void {
+    if (!this.account.control()) return;
   }
 
 }

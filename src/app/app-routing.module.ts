@@ -1,4 +1,5 @@
-import { SettingsComponent } from './_routes/settings/settings.component';
+import { LoginComponent } from './_routes/login/login.component';
+import { TextComponent } from './_routes/text/text.component';
 import { ListsComponent } from './_routes/lists/lists.component';
 import { OverviewComponent } from './_routes/overview/overview.component';
 import { ErrorComponent } from './_routes/error/error.component';
@@ -13,8 +14,10 @@ const routes: Routes = [
   {path: 'terminliste', component: ListsComponent},
   {path: 'pruefungen', component: ListsComponent},
   {path: 'gemischte_liste', component: ListsComponent},
-  {path: 'einstellung', component: SettingsComponent},
   {path: 'kalender', component: ErrorComponent},
+  {path: 'ueber_uns', component: TextComponent},
+  {path: 'datenschutz', component: TextComponent},
+  {path: 'login', component: LoginComponent},
 
   //ErrorMsgs + Wildcard
   {path: '404', component: ErrorComponent},

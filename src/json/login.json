@@ -1,0 +1,11 @@
+{
+    "h2": "Anmeldung",
+    "nameMissing": "Name fehlt.",
+    "passMissing": "Passwort fehlt.",
+    "send": "send",
+
+    "placeholders": {
+        "name": "Name",
+        "pass": "Passwort"
+    }
+}

@@ -1,0 +1,17 @@
+<div class="fullcard max-z-index main-theme-color display-center-row">
+    <div class="container max-z-index fixed-container">
+        <div class="max-z-index add-card second-theme-color display-center-column">
+            <h2>{{_data.h2}}</h2>
+            <form #login="ngForm" class="display-center-column form-container" (submit)="submit(login.value)">
+                <input type="text" placeholder="{{_data.placeholders.name}}" name="name" ngModel>
+                <p class="missing" *ngIf="login.value.name == '' ">{{_data.nameMissing}}</p>
+                <input type="password" placeholder="{{_data.placeholders.pass}}" name="pass" ngModel>
+                <p class="missing" *ngIf="login.value.pass == '' ">{{_data.passMissing}}</p>
+                <button type="submit">
+                  <mat-icon>send</mat-icon>
+                </button>
+            </form>
+
+        </div>
+    </div>
+</div>

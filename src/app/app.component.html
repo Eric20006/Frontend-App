@@ -1,5 +1,5 @@
 <school-background> </school-background>
-<school-side-list></school-side-list>
+<school-side-list *ngIf="account.logIn != undefined"></school-side-list>
 
 <router-outlet></router-outlet>
 <svg src="../assets/1531577.svg"></svg>

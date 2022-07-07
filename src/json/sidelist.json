@@ -29,13 +29,18 @@
     "id": 5,
     "path": "gemischte_liste"
 }, {
-    "name": "Einstellung",
-    "matIcon": "settings",
-    "id": 6,
-    "path": "einstellung"
-}, {
     "name": "Kalender",
     "matIcon": "calendar_today",
     "id": 7,
     "path": "kalender"
+}, {
+    "name": "Über uns",
+    "matIcon": "person_pin",
+    "id": 8,
+    "path": "ueber_uns"
+}, {
+    "name": "Datenschutz",
+    "matIcon": "lock",
+    "id": 9,
+    "path": "datenschutz"
 }]

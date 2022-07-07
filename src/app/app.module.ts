@@ -17,7 +17,8 @@ import { SortSliderComponent } from './_general-templates/sort-slider/sort-slide
 import { DetailedCardComponent } from './_general-templates/detailed-card/detailed-card.component';
 import { NoTasksComponent } from './_general-templates/no-tasks/no-tasks.component';
 import { DeletingReturnComponent } from './_general-templates/deleting-return/deleting-return.component';
-import { SettingsComponent } from './_routes/settings/settings.component';
+import { TextComponent } from './_routes/text/text.component';
+import { LoginComponent } from './_routes/login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SettingsComponent } from './_routes/settings/settings.component';
     DetailedCardComponent,
     NoTasksComponent,
     DeletingReturnComponent,
-    SettingsComponent,
+    TextComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
