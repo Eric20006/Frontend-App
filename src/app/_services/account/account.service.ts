@@ -10,7 +10,7 @@ export class AccountService {
   public logIn: Account;
   constructor(private router:Router) {
     this.logIn = {
-      id: undefined,
+      id: 0,
       name: ''
     };
   }

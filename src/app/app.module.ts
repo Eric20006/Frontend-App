@@ -19,6 +19,7 @@ import { NoTasksComponent } from './_routes/lists/templates/no-tasks/no-tasks.co
 import { DeletingReturnComponent } from './_routes/lists/templates//deleting-return/deleting-return.component';
 import { TextComponent } from './_routes/text/text.component';
 import { LoginComponent } from './_routes/login/login.component';
+import { CardComponent } from './_routes/overview/card/card.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { LoginComponent } from './_routes/login/login.component';
     DeletingReturnComponent,
     TextComponent,
     LoginComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,

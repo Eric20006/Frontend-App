@@ -52,9 +52,7 @@ export class ListsComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-    if (!this.account.control()) return;
-
+  private getContent(): void {
     if (location.pathname == '/terminliste') {
       this.id = this.ids.specificIDs[1];
       this.databank.getSchedules();
@@ -76,7 +74,12 @@ export class ListsComponent implements OnInit {
       this.id = this.ids.specificIDs[3];
       this.item = this.databank.allTasks;
     }
+  }
 
+  ngOnInit(): void {
+    if (!this.account.control()) return;
+
+    this.getContent();
   }
 
 

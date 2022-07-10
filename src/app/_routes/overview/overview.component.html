@@ -1,6 +1,9 @@
-<div class="wrapper overflow">
+<div class="wrapper specific-overflow">
     <div class="outer-title">
         <h2>{{titleConfig.titleConfig()}}</h2>
     </div>
 
+    <div class="container">
+        <school-card *ngFor="let item of allContent" [content]="item" class="width"></school-card>
+    </div>
 </div>

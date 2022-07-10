@@ -31,16 +31,16 @@
 }, {
     "name": "Kalender",
     "matIcon": "calendar_today",
-    "id": 7,
+    "id": 6,
     "path": "kalender"
 }, {
     "name": "Über uns",
     "matIcon": "person_pin",
-    "id": 8,
+    "id": 7,
     "path": "ueber_uns"
 }, {
     "name": "Datenschutz",
     "matIcon": "lock",
-    "id": 9,
+    "id": 8,
     "path": "datenschutz"
 }]

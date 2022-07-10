@@ -1,0 +1,39 @@
+@import '../../../../scss/export';
+
+/* Start: */
+
+.container {
+    width: 90%;
+    margin: $static-scale * 2.5;
+    padding: $static-scale * 1.2;
+    box-sizing: border-box;
+    border-radius: $normal-border;
+    border: $special-color 2px solid;
+    cursor: pointer;
+    .content {
+        height: auto;
+        max-height: 80%;
+        overflow: hidden;
+        li {
+            list-style-type: none;
+            margin: $static-scale * 1;
+        }
+    }
+}
+
+//Specific styles
+.small {
+    height: $static-scale * 35;
+}
+
+.middle {
+    height: $static-scale * 60;
+}
+
+.big {
+    height: $static-scale * 110;
+}
+
+.none {
+    display: none;
+}
